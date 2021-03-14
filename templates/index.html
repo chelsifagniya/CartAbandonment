@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+  <meta charset = "UTF-8">
+  <title>ML API</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet" type="text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+ <div class="login">
+   <h1> Cart Abandonment Prediction</h1>
+   <! --main Input For receiving Query to our ML -- >
+   <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="Session_Activity_Count" placeholder="Session_Activity_Count" required="required" />
+        <input type="text" name="No_Cart_Viewed" placeholder="No_Cart_Viewed" required="required" />
+        <input type="text" name="No_Checkout_Confirmed" placeholder="No_Checkout_Confirmed" required="required" />
+		<input type="text" name="No_Checkout_Initiated " placeholder="No_Checkout_Initiated " required="required" />
+		<input type="text" name="No_Customer_Login" placeholder="No_Customer_Login" required="required" />
+        <input type="text" name="No_Page_Viewed" placeholder="No_Page_Viewed" required="required" />
+		<input type="text" name="Is_Product_Details_viewed" placeholder="Is_Product_Details_viewed" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   <br>    
+   {{ prediction_text}}
+   
+ </div>
+ 
+ </body>
+ </html>
